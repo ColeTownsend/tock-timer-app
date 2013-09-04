@@ -1,0 +1,209 @@
+K 25
+svn:wc:ra_dav:version-url
+V 106
+/svn/rocketsauce/!svn/ver/455/trunk/Mac/OSX/Tock/Tock/Resources/ParseOSX.framework/Versions/1.2.10/Headers
+END
+PFLogInView.h
+K 25
+svn:wc:ra_dav:version-url
+V 120
+/svn/rocketsauce/!svn/ver/455/trunk/Mac/OSX/Tock/Tock/Resources/ParseOSX.framework/Versions/1.2.10/Headers/PFLogInView.h
+END
+PFSignUpViewController.h
+K 25
+svn:wc:ra_dav:version-url
+V 131
+/svn/rocketsauce/!svn/ver/455/trunk/Mac/OSX/Tock/Tock/Resources/ParseOSX.framework/Versions/1.2.10/Headers/PFSignUpViewController.h
+END
+PFCloud.h
+K 25
+svn:wc:ra_dav:version-url
+V 116
+/svn/rocketsauce/!svn/ver/455/trunk/Mac/OSX/Tock/Tock/Resources/ParseOSX.framework/Versions/1.2.10/Headers/PFCloud.h
+END
+PFObject.h
+K 25
+svn:wc:ra_dav:version-url
+V 117
+/svn/rocketsauce/!svn/ver/455/trunk/Mac/OSX/Tock/Tock/Resources/ParseOSX.framework/Versions/1.2.10/Headers/PFObject.h
+END
+PFPurchase.h
+K 25
+svn:wc:ra_dav:version-url
+V 119
+/svn/rocketsauce/!svn/ver/455/trunk/Mac/OSX/Tock/Tock/Resources/ParseOSX.framework/Versions/1.2.10/Headers/PFPurchase.h
+END
+PFQueryTableViewController.h
+K 25
+svn:wc:ra_dav:version-url
+V 135
+/svn/rocketsauce/!svn/ver/455/trunk/Mac/OSX/Tock/Tock/Resources/ParseOSX.framework/Versions/1.2.10/Headers/PFQueryTableViewController.h
+END
+PFConstants.h
+K 25
+svn:wc:ra_dav:version-url
+V 120
+/svn/rocketsauce/!svn/ver/455/trunk/Mac/OSX/Tock/Tock/Resources/ParseOSX.framework/Versions/1.2.10/Headers/PFConstants.h
+END
+PFRelation.h
+K 25
+svn:wc:ra_dav:version-url
+V 119
+/svn/rocketsauce/!svn/ver/455/trunk/Mac/OSX/Tock/Tock/Resources/ParseOSX.framework/Versions/1.2.10/Headers/PFRelation.h
+END
+PFPurchaseTableViewCell.h
+K 25
+svn:wc:ra_dav:version-url
+V 132
+/svn/rocketsauce/!svn/ver/455/trunk/Mac/OSX/Tock/Tock/Resources/ParseOSX.framework/Versions/1.2.10/Headers/PFPurchaseTableViewCell.h
+END
+PFImageView.h
+K 25
+svn:wc:ra_dav:version-url
+V 120
+/svn/rocketsauce/!svn/ver/455/trunk/Mac/OSX/Tock/Tock/Resources/ParseOSX.framework/Versions/1.2.10/Headers/PFImageView.h
+END
+PFUser.h
+K 25
+svn:wc:ra_dav:version-url
+V 115
+/svn/rocketsauce/!svn/ver/455/trunk/Mac/OSX/Tock/Tock/Resources/ParseOSX.framework/Versions/1.2.10/Headers/PFUser.h
+END
+ParseOSX.h
+K 25
+svn:wc:ra_dav:version-url
+V 117
+/svn/rocketsauce/!svn/ver/455/trunk/Mac/OSX/Tock/Tock/Resources/ParseOSX.framework/Versions/1.2.10/Headers/ParseOSX.h
+END
+PFObject+Subclass.h
+K 25
+svn:wc:ra_dav:version-url
+V 126
+/svn/rocketsauce/!svn/ver/455/trunk/Mac/OSX/Tock/Tock/Resources/ParseOSX.framework/Versions/1.2.10/Headers/PFObject+Subclass.h
+END
+PFTableViewCell.h
+K 25
+svn:wc:ra_dav:version-url
+V 124
+/svn/rocketsauce/!svn/ver/455/trunk/Mac/OSX/Tock/Tock/Resources/ParseOSX.framework/Versions/1.2.10/Headers/PFTableViewCell.h
+END
+PFTwitterUtils.h
+K 25
+svn:wc:ra_dav:version-url
+V 123
+/svn/rocketsauce/!svn/ver/455/trunk/Mac/OSX/Tock/Tock/Resources/ParseOSX.framework/Versions/1.2.10/Headers/PFTwitterUtils.h
+END
+Parse.h
+K 25
+svn:wc:ra_dav:version-url
+V 114
+/svn/rocketsauce/!svn/ver/455/trunk/Mac/OSX/Tock/Tock/Resources/ParseOSX.framework/Versions/1.2.10/Headers/Parse.h
+END
+PFFacebookUtils.h
+K 25
+svn:wc:ra_dav:version-url
+V 124
+/svn/rocketsauce/!svn/ver/455/trunk/Mac/OSX/Tock/Tock/Resources/ParseOSX.framework/Versions/1.2.10/Headers/PFFacebookUtils.h
+END
+PFACL.h
+K 25
+svn:wc:ra_dav:version-url
+V 114
+/svn/rocketsauce/!svn/ver/455/trunk/Mac/OSX/Tock/Tock/Resources/ParseOSX.framework/Versions/1.2.10/Headers/PFACL.h
+END
+PFSignUpView.h
+K 25
+svn:wc:ra_dav:version-url
+V 121
+/svn/rocketsauce/!svn/ver/455/trunk/Mac/OSX/Tock/Tock/Resources/ParseOSX.framework/Versions/1.2.10/Headers/PFSignUpView.h
+END
+PFInstallation.h
+K 25
+svn:wc:ra_dav:version-url
+V 123
+/svn/rocketsauce/!svn/ver/455/trunk/Mac/OSX/Tock/Tock/Resources/ParseOSX.framework/Versions/1.2.10/Headers/PFInstallation.h
+END
+PF_Twitter.h
+K 25
+svn:wc:ra_dav:version-url
+V 119
+/svn/rocketsauce/!svn/ver/455/trunk/Mac/OSX/Tock/Tock/Resources/ParseOSX.framework/Versions/1.2.10/Headers/PF_Twitter.h
+END
+PF_EGORefreshTableHeaderView.h
+K 25
+svn:wc:ra_dav:version-url
+V 137
+/svn/rocketsauce/!svn/ver/455/trunk/Mac/OSX/Tock/Tock/Resources/ParseOSX.framework/Versions/1.2.10/Headers/PF_EGORefreshTableHeaderView.h
+END
+PFQuery.h
+K 25
+svn:wc:ra_dav:version-url
+V 116
+/svn/rocketsauce/!svn/ver/455/trunk/Mac/OSX/Tock/Tock/Resources/ParseOSX.framework/Versions/1.2.10/Headers/PFQuery.h
+END
+PFLogInViewController.h
+K 25
+svn:wc:ra_dav:version-url
+V 130
+/svn/rocketsauce/!svn/ver/455/trunk/Mac/OSX/Tock/Tock/Resources/ParseOSX.framework/Versions/1.2.10/Headers/PFLogInViewController.h
+END
+PFAnonymousUtils.h
+K 25
+svn:wc:ra_dav:version-url
+V 125
+/svn/rocketsauce/!svn/ver/455/trunk/Mac/OSX/Tock/Tock/Resources/ParseOSX.framework/Versions/1.2.10/Headers/PFAnonymousUtils.h
+END
+PFSubclassing.h
+K 25
+svn:wc:ra_dav:version-url
+V 122
+/svn/rocketsauce/!svn/ver/455/trunk/Mac/OSX/Tock/Tock/Resources/ParseOSX.framework/Versions/1.2.10/Headers/PFSubclassing.h
+END
+PFPush.h
+K 25
+svn:wc:ra_dav:version-url
+V 115
+/svn/rocketsauce/!svn/ver/455/trunk/Mac/OSX/Tock/Tock/Resources/ParseOSX.framework/Versions/1.2.10/Headers/PFPush.h
+END
+PFFile.h
+K 25
+svn:wc:ra_dav:version-url
+V 115
+/svn/rocketsauce/!svn/ver/455/trunk/Mac/OSX/Tock/Tock/Resources/ParseOSX.framework/Versions/1.2.10/Headers/PFFile.h
+END
+PFProduct.h
+K 25
+svn:wc:ra_dav:version-url
+V 118
+/svn/rocketsauce/!svn/ver/455/trunk/Mac/OSX/Tock/Tock/Resources/ParseOSX.framework/Versions/1.2.10/Headers/PFProduct.h
+END
+PF_MBProgressHUD.h
+K 25
+svn:wc:ra_dav:version-url
+V 125
+/svn/rocketsauce/!svn/ver/455/trunk/Mac/OSX/Tock/Tock/Resources/ParseOSX.framework/Versions/1.2.10/Headers/PF_MBProgressHUD.h
+END
+PFGeoPoint.h
+K 25
+svn:wc:ra_dav:version-url
+V 119
+/svn/rocketsauce/!svn/ver/455/trunk/Mac/OSX/Tock/Tock/Resources/ParseOSX.framework/Versions/1.2.10/Headers/PFGeoPoint.h
+END
+PFProductTableViewController.h
+K 25
+svn:wc:ra_dav:version-url
+V 137
+/svn/rocketsauce/!svn/ver/455/trunk/Mac/OSX/Tock/Tock/Resources/ParseOSX.framework/Versions/1.2.10/Headers/PFProductTableViewController.h
+END
+PFAnalytics.h
+K 25
+svn:wc:ra_dav:version-url
+V 120
+/svn/rocketsauce/!svn/ver/455/trunk/Mac/OSX/Tock/Tock/Resources/ParseOSX.framework/Versions/1.2.10/Headers/PFAnalytics.h
+END
+PFRole.h
+K 25
+svn:wc:ra_dav:version-url
+V 115
+/svn/rocketsauce/!svn/ver/455/trunk/Mac/OSX/Tock/Tock/Resources/ParseOSX.framework/Versions/1.2.10/Headers/PFRole.h
+END

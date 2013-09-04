@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>A0501801-9AA0-4AE5-9547-883549AB7F43</string>
+	<key>IDESourceControlProjectName</key>
+	<string>Tock</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>BEA488E0-55A6-41BE-9861-1852CF489DD2</key>
+		<string>http://subversion.assembla.com/svn/rocketsauce/trunk/Mac/OSX</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>Tock/Tock.xcodeproj/project.xcworkspace</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>BEA488E0-55A6-41BE-9861-1852CF489DD2</key>
+		<string>../../..</string>
+	</dict>
+	<key>IDESourceControlProjectRepositoryRootDictionary</key>
+	<dict>
+		<key>BEA488E0-55A6-41BE-9861-1852CF489DD2</key>
+		<string>http://subversion.assembla.com/svn/rocketsauce</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>http://subversion.assembla.com/svn/rocketsauce/trunk/Mac/OSX/Tock/Tock.xcodeproj</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>110</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>BEA488E0-55A6-41BE-9861-1852CF489DD2</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.subversion</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>BEA488E0-55A6-41BE-9861-1852CF489DD2</string>
+			<key>IDESourceControlWCCName</key>
+			<string>OSX</string>
+		</dict>
+	</array>
+</dict>
+</plist>

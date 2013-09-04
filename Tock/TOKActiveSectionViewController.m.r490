@@ -1,0 +1,344 @@
+//
+//  TOKActiveSectionViewController.m
+//  Tock
+//
+//  Created by Rob DeRosa on 6/22/13.
+//  Copyright (c) 2013 Rob DeRosa. All rights reserved.
+//
+
+#import "TOKActiveSectionViewController.h"
+#import "TOKBaseView.h"
+#import "TOKAppDelegate.h"
+#import "RSCategories.h"
+#import "TOKTask.h"
+#import "TOKSubtask.h"
+#import "TOKAddNewTaskViewController.h"
+
+@interface TOKActiveSectionViewController ()
+{
+	TOKAddNewTaskViewController* _addNewTaskViewController;
+	NSTimer* _timer;
+}
+
+@property (weak) IBOutlet NSTextField *hourlyRate;
+@property (weak) IBOutlet NSTextField *workTotal;
+@property (weak) IBOutlet NSTextField *currentTime;
+@property (weak) IBOutlet NSTextField *currentTaskName;
+@property (weak) IBOutlet NSButton *playPauseButton;
+@property (weak) IBOutlet NSButton *taskCompleteButton;
+@property (strong) IBOutlet NSTableView *subtaskTableView;
+@property (weak) IBOutlet NSTextField *addNewSubtaskTextField;
+
+
+@end
+
+@implementation TOKActiveSectionViewController
+
+- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
+{
+    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
+    if(self)
+	{
+		[self bindNotificationListeners];
+    }
+    
+    return self;
+}
+
+-(void)awakeFromNib
+{
+	[super awakeFromNib];
+
+	_subtaskTableView.delegate = self;
+	_subtaskTableView.dataSource = self;
+}
+
+-(void)updateFromSettings
+{
+	double hr = [[g_AppDelegate.settings objectForKey:@"hourlyRate"] doubleValue];
+	_hourlyRate.stringValue = [NSString stringWithFormat:@"%@/HR", [NSString moneyString:hr]];
+	
+}
+
+-(void)bindNotificationListeners
+{
+	[[NSNotificationCenter defaultCenter] addObserverForName:TOKSETTINGS_UPDATED
+													  object: nil
+													   queue: [NSOperationQueue mainQueue]
+												  usingBlock: ^(NSNotification *notification)
+	 {
+		 [self updateFromSettings];
+	 }];
+
+	[[NSNotificationCenter defaultCenter] addObserverForName:TOKUSER_AUTHENTICATED
+													  object: nil
+													   queue: [NSOperationQueue mainQueue]
+												  usingBlock: ^(NSNotification *notification)
+	 {
+	 }];
+
+	[[NSNotificationCenter defaultCenter] addObserverForName:TOKUSER_LOGGEDOUT
+													  object: nil
+													   queue: [NSOperationQueue mainQueue]
+												  usingBlock: ^(NSNotification *notification)
+	 {
+		 [_subtaskTableView reloadData];
+	 }];
+
+	[[NSNotificationCenter defaultCenter] addObserverForName:TOKNEW_TASK_REQUESTED
+													  object: nil
+													   queue: [NSOperationQueue mainQueue]
+												  usingBlock: ^(NSNotification *notification)
+	 {
+		 [self showNewTaskView];
+	 }];
+
+	[[NSNotificationCenter defaultCenter] addObserverForName:TOKNEW_TASK_ADDED
+													  object: nil
+													   queue: [NSOperationQueue mainQueue]
+												  usingBlock: ^(NSNotification *notification)
+	 {
+		 g_AppDelegate.selectedTask = notification.object;
+		 [self bindSelectedTask];
+	 }];
+	
+	[[NSNotificationCenter defaultCenter] addObserverForName:TOKACTIVE_TASK_CHANGED
+													  object: nil
+													   queue: [NSOperationQueue mainQueue]
+												  usingBlock: ^(NSNotification *notification)
+	 {
+		 [self bindSelectedTask];
+	 }];
+	
+}
+
+-(void)bindSelectedTask
+{
+	self.representedObject = g_AppDelegate.selectedTask;
+	_currentTime.stringValue = [NSDate timeIntervalToString:g_AppDelegate.selectedTask.time];
+	[_subtaskTableView reloadData];
+}
+
+-(long)numberOfRowsInTableView:(NSTableView*)tableView
+{
+	return g_AppDelegate.selectedTask.subTasks.count + 1;
+}
+
+-(NSTableRowView*)tableView:(NSTableView *)tableView rowViewForRow:(NSInteger)row
+{
+	NSTableRowView* r = [NSTableRowView new];
+	return r;
+}
+
+-(NSView*)tableView:(NSTableView *)tableView viewForTableColumn:(NSTableColumn *)tableColumn row:(NSInteger)row
+{
+	if(row >= g_AppDelegate.selectedTask.subTasks.count + 1)
+		return nil;
+	
+	if(row == 0)
+	{
+		NSTableCellView* view = [tableView makeViewWithIdentifier:@"enterTaskItemView" owner:nil];
+		NSTextField* addNew = (NSTextField*)[view findSubViewWithIdentifier:@"enterTaskTextField"];
+		addNew.delegate = self;
+		self.addNewSubtaskTextField = addNew;
+
+		return view;
+	}
+	
+	TOKSubtask* subtask = [g_AppDelegate.selectedTask.subTasks objectAtIndex:row - 1];
+	TOKActiveTaskItemCellView* view = [tableView makeViewWithIdentifier:@"taskItemView" owner:nil];
+
+	view.isLast = row == g_AppDelegate.selectedTask.subTasks.count;
+	[view getTaskName].stringValue = [subtask.name uppercaseString];
+	[view getTaskCheck].state = subtask.isComplete;
+	
+	NSButton* btn = [view getTaskCheck];
+	[btn setAction:@selector(onSubtaskCompleteClick:)];
+	[btn setTarget:self];
+	view.objectValue = subtask;
+	
+	return view;
+}
+
+-(void)showNewTaskView
+{
+	if(!_addNewTaskViewController)
+	{
+		_addNewTaskViewController = [[TOKAddNewTaskViewController alloc] initWithNibName:@"TOKAddNewTaskViewController" bundle:nil];
+	}
+	
+	[self.view addSubview:_addNewTaskViewController.view];
+	[_addNewTaskViewController becomeFirstResponder];
+	[_addNewTaskViewController.view setFrameOrigin:NSMakePoint(0, self.view.frame.size.height - _addNewTaskViewController.view.frame.size.height - 2)];
+}
+
+-(void)reset
+{
+	_addNewSubtaskTextField.stringValue = @"";
+}
+
+-(IBAction)onSubtaskCompleteClick:(NSButton*)sender
+{
+	TOKSubtask* item = [(NSTableCellView *)[sender superview] objectValue];
+	item.isComplete = sender.state;
+	[item saveInBackground];
+}
+
+-(void)onNewSubtaskSubmit:(NSString*)name
+{
+	TOKSubtask* sub = [TOKSubtask object];
+	sub.name = name;
+	sub.ACL = [PFACL ACLWithUser:[PFUser currentUser]];
+	sub.parentTask = g_AppDelegate.selectedTask;
+	
+	[sub saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error)
+	 {
+		 [g_AppDelegate.selectedTask.subTasks insertObject:sub atIndex:0];
+		 [_subtaskTableView reloadData];
+		 [self reset];
+		 
+		 NSNotification* n = [NSNotification notificationWithName:TOKNEW_SUBTASK_ADDED object:nil];
+		 [[NSNotificationCenter defaultCenter] postNotification:n];
+	 }];
+}
+
+
+-(BOOL)control:(NSControl*)control textView:(NSTextView*)fieldEditor doCommandBySelector:(SEL)commandSelector
+{
+    BOOL isReturn = commandSelector == @selector(insertNewline:);
+	
+	if(isReturn)
+	{
+		if([control.identifier isEqualToString:@"enterTaskTextField"])
+		{
+			[self onNewSubtaskSubmit:[control.stringValue trimWhiteSpace]];
+		}
+	}
+	
+	return isReturn;
+}
+
+- (IBAction)onStartTimerClick:(NSButton*)sender
+{
+	if(!sender.state)
+	{
+		[self startTimer];
+	}
+	else
+	{
+		[self stopTimer];
+	}
+}
+
+- (IBAction)onTaskCompleteClick:(NSButton*)sender
+{
+}
+
+-(void)startTimer
+{
+	if(!_timer)
+	{
+		_timer = [NSTimer scheduledTimerWithTimeInterval:1.0
+										  target:self
+										selector:@selector(onTimerTick:)
+										userInfo:nil
+										 repeats:YES];
+
+	}
+	
+	[_timer fire];
+}
+
+-(void)stopTimer
+{
+	[_timer invalidate];
+	[g_AppDelegate.selectedTask saveInBackground];
+}
+
+-(void)onTimerTick:(NSTimer*)timer
+{
+	g_AppDelegate.selectedTask.time++;
+	[TOKAppDelegate runOnMainQueue:^
+	{
+		_currentTime.stringValue = [NSDate timeIntervalToString:g_AppDelegate.selectedTask.time];
+	}];
+}
+
+
+@end
+
+
+
+
+
+
+
+
+
+
+
+
+@implementation TOKActiveTaskItemCellView
+
+@synthesize isLast;
+
+-(NSTextField*)getTaskName
+{
+	return (NSTextField*)[self findSubViewWithIdentifier:@"taskName"];
+}
+
+-(NSButton*)getTaskCheck
+{
+	return (NSButton*)[self findSubViewWithIdentifier:@"taskCheck"];
+}
+
+-(void)drawRect:(NSRect)dirtyRect
+{
+	[super drawRect:dirtyRect];
+	
+	CGContextRef context = [[NSGraphicsContext currentContext] graphicsPort];
+	CGContextSetBlendMode(context, kCGBlendModeNormal);
+	CGContextSetShouldAntialias (context, FALSE);
+	CGContextSetStrokeColorWithColor(context, [NSColor colorWithR:215 G:215 B:215 A:1].CGColor);
+	CGContextSetLineWidth(context, 1.0);
+	
+	CGContextMoveToPoint(context, 0, 1);
+	CGContextAddLineToPoint(context, dirtyRect.size.width, 1);
+	CGContextStrokePath(context);
+}
+
+@end
+
+
+
+
+
+
+@interface TOKActiveView : TOKBaseView
+{
+}
+@end
+
+@implementation TOKActiveView
+
+-(void)drawRect:(NSRect)dirtyRect
+{
+	if(dirtyRect.size.width != self.window.frame.size.width)
+		return;
+	
+	CGContextRef context = [[NSGraphicsContext currentContext] graphicsPort];
+	CGContextRetain(context);
+	CGContextSetBlendMode(context, kCGBlendModeNormal);
+	CGContextSetShouldAntialias (context, FALSE);
+	CGContextSetStrokeColorWithColor(context, [NSColor colorWithR:215 G:215 B:215 A:1].CGColor);
+	CGContextSetLineWidth(context, 1.0);
+	
+	int width = 260;
+	int height = 206;
+	CGContextMoveToPoint(context, dirtyRect.size.width - width, height);
+	CGContextAddLineToPoint(context, dirtyRect.size.width - width, 0);
+	
+	CGContextStrokePath(context);
+}
+
+@end

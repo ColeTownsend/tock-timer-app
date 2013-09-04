@@ -1,0 +1,745 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		D400CAFA179CA6BD0025ABD7 /* active annotation.png in Resources */ = {isa = PBXBuildFile; fileRef = D400CAF4179CA6BD0025ABD7 /* active annotation.png */; };
+		D400CAFB179CA6BD0025ABD7 /* active annotation@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D400CAF5179CA6BD0025ABD7 /* active annotation@2x.png */; };
+		D400CAFC179CA6BD0025ABD7 /* completed annotation.png in Resources */ = {isa = PBXBuildFile; fileRef = D400CAF6179CA6BD0025ABD7 /* completed annotation.png */; };
+		D400CAFD179CA6BD0025ABD7 /* completed annotation@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D400CAF7179CA6BD0025ABD7 /* completed annotation@2x.png */; };
+		D400CAFE179CA6BD0025ABD7 /* delete annotation.png in Resources */ = {isa = PBXBuildFile; fileRef = D400CAF8179CA6BD0025ABD7 /* delete annotation.png */; };
+		D400CAFF179CA6BD0025ABD7 /* delete annotation@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D400CAF9179CA6BD0025ABD7 /* delete annotation@2x.png */; };
+		D408100B1781F7E4004778C6 /* Tock.icns in Resources */ = {isa = PBXBuildFile; fileRef = D408100A1781F7E4004778C6 /* Tock.icns */; };
+		D41957BE1778D39D005873EA /* TOKAddNewTaskViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D41957BC1778D39D005873EA /* TOKAddNewTaskViewController.m */; };
+		D41957C81778D491005873EA /* edit pencil.png in Resources */ = {isa = PBXBuildFile; fileRef = D41957C01778D491005873EA /* edit pencil.png */; };
+		D41957C91778D491005873EA /* edit pencil@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D41957C11778D491005873EA /* edit pencil@2x.png */; };
+		D41957CA1778D491005873EA /* hit enter symbol.png in Resources */ = {isa = PBXBuildFile; fileRef = D41957C21778D491005873EA /* hit enter symbol.png */; };
+		D41957CB1778D491005873EA /* hit enter symbol@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D41957C31778D491005873EA /* hit enter symbol@2x.png */; };
+		D41957CC1778D491005873EA /* new task textbox.png in Resources */ = {isa = PBXBuildFile; fileRef = D41957C41778D491005873EA /* new task textbox.png */; };
+		D41957CD1778D491005873EA /* new task textbox@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D41957C51778D491005873EA /* new task textbox@2x.png */; };
+		D41957CE1778D491005873EA /* task edit textbox.png in Resources */ = {isa = PBXBuildFile; fileRef = D41957C61778D491005873EA /* task edit textbox.png */; };
+		D41957CF1778D491005873EA /* task edit textbox@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D41957C71778D491005873EA /* task edit textbox@2x.png */; };
+		D41B825D177CC9D1009CBBDC /* facebook sign up button active.png in Resources */ = {isa = PBXBuildFile; fileRef = D41B8253177CC9CF009CBBDC /* facebook sign up button active.png */; };
+		D41B825E177CC9D1009CBBDC /* facebook sign up button active@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D41B8254177CC9D0009CBBDC /* facebook sign up button active@2x.png */; };
+		D41B825F177CC9D1009CBBDC /* facebook sign up button.png in Resources */ = {isa = PBXBuildFile; fileRef = D41B8255177CC9D0009CBBDC /* facebook sign up button.png */; };
+		D41B8260177CC9D1009CBBDC /* facebook sign up button@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D41B8256177CC9D0009CBBDC /* facebook sign up button@2x.png */; };
+		D41B8261177CC9D1009CBBDC /* log in button active.png in Resources */ = {isa = PBXBuildFile; fileRef = D41B8257177CC9D0009CBBDC /* log in button active.png */; };
+		D41B8262177CC9D1009CBBDC /* log in button active@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D41B8258177CC9D0009CBBDC /* log in button active@2x.png */; };
+		D41B8263177CC9D1009CBBDC /* sign up button active.png in Resources */ = {isa = PBXBuildFile; fileRef = D41B8259177CC9D0009CBBDC /* sign up button active.png */; };
+		D41B8264177CC9D1009CBBDC /* sign up button active@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D41B825A177CC9D0009CBBDC /* sign up button active@2x.png */; };
+		D437062C178326E800F0427C /* TOKSubtask.m in Sources */ = {isa = PBXBuildFile; fileRef = D437062B178326E800F0427C /* TOKSubtask.m */; };
+		D44555951773F1C100A8A24C /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D44555941773F1C100A8A24C /* Cocoa.framework */; };
+		D445559F1773F1C100A8A24C /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = D445559D1773F1C100A8A24C /* InfoPlist.strings */; };
+		D44555A11773F1C100A8A24C /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = D44555A01773F1C100A8A24C /* main.m */; };
+		D44555A51773F1C100A8A24C /* Credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = D44555A31773F1C100A8A24C /* Credits.rtf */; };
+		D44555A81773F1C100A8A24C /* TOKAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D44555A71773F1C100A8A24C /* TOKAppDelegate.m */; };
+		D44555AB1773F1C100A8A24C /* TOKMainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = D44555A91773F1C100A8A24C /* TOKMainWindow.xib */; };
+		D44555AE1773F1C100A8A24C /* Tock.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = D44555AC1773F1C100A8A24C /* Tock.xcdatamodeld */; };
+		D44555B61773F4AC00A8A24C /* TOKMainWindow.m in Sources */ = {isa = PBXBuildFile; fileRef = D44555B51773F4AC00A8A24C /* TOKMainWindow.m */; };
+		D44555BA177614ED00A8A24C /* new task.png in Resources */ = {isa = PBXBuildFile; fileRef = D44555B8177614ED00A8A24C /* new task.png */; };
+		D44555BB177614ED00A8A24C /* new task@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D44555B9177614ED00A8A24C /* new task@2x.png */; };
+		D44555BE1776167C00A8A24C /* new task active.png in Resources */ = {isa = PBXBuildFile; fileRef = D44555BC1776167C00A8A24C /* new task active.png */; };
+		D44555BF1776167C00A8A24C /* new task active@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D44555BD1776167C00A8A24C /* new task active@2x.png */; };
+		D44555D21776456900A8A24C /* mid section background.png in Resources */ = {isa = PBXBuildFile; fileRef = D44555D11776456900A8A24C /* mid section background.png */; };
+		D45C1023177E60F600C52A0C /* send button active.png in Resources */ = {isa = PBXBuildFile; fileRef = D45C101F177E60F600C52A0C /* send button active.png */; };
+		D45C1024177E60F600C52A0C /* send button active@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D45C1020177E60F600C52A0C /* send button active@2x.png */; };
+		D45C1025177E60F600C52A0C /* send button.png in Resources */ = {isa = PBXBuildFile; fileRef = D45C1021177E60F600C52A0C /* send button.png */; };
+		D45C1026177E60F600C52A0C /* send button@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D45C1022177E60F600C52A0C /* send button@2x.png */; };
+		D460925A17820B9A00C22462 /* TOKAddNewTaskViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D460925917820B9A00C22462 /* TOKAddNewTaskViewController.xib */; };
+		D46B59131789C68A004D3F7B /* TOKSettings.m in Sources */ = {isa = PBXBuildFile; fileRef = D46B59121789C68A004D3F7B /* TOKSettings.m */; };
+		D4821E091780A4D10063EC8C /* back arrow.png in Resources */ = {isa = PBXBuildFile; fileRef = D4821E071780A4D10063EC8C /* back arrow.png */; };
+		D4821E0A1780A4D10063EC8C /* back arrow@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D4821E081780A4D10063EC8C /* back arrow@2x.png */; };
+		D4821E0F1780C4410063EC8C /* TOKAuthenticationWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = D4821E0D1780C4410063EC8C /* TOKAuthenticationWindowController.m */; };
+		D4821E101780C4410063EC8C /* TOKAuthenticationWindowController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D4821E0E1780C4410063EC8C /* TOKAuthenticationWindowController.xib */; };
+		D4821E171780C4700063EC8C /* TOKBaseView.m in Sources */ = {isa = PBXBuildFile; fileRef = D4821E131780C4700063EC8C /* TOKBaseView.m */; };
+		D4821E181780C4700063EC8C /* TOKBaseWindow.m in Sources */ = {isa = PBXBuildFile; fileRef = D4821E151780C4700063EC8C /* TOKBaseWindow.m */; };
+		D4821E1C1780ED3D0063EC8C /* TOKTask.m in Sources */ = {isa = PBXBuildFile; fileRef = D4821E1B1780ED3D0063EC8C /* TOKTask.m */; };
+		D496B3F3177A2AE300376A10 /* auth textbox invalid.png in Resources */ = {isa = PBXBuildFile; fileRef = D496B3E1177A2AE300376A10 /* auth textbox invalid.png */; };
+		D496B3F4177A2AE300376A10 /* auth textbox invalid@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D496B3E2177A2AE300376A10 /* auth textbox invalid@2x.png */; };
+		D496B3F5177A2AE300376A10 /* auth textbox.png in Resources */ = {isa = PBXBuildFile; fileRef = D496B3E3177A2AE300376A10 /* auth textbox.png */; };
+		D496B3F6177A2AE300376A10 /* auth textbox@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D496B3E4177A2AE300376A10 /* auth textbox@2x.png */; };
+		D496B3F7177A2AE300376A10 /* divider.png in Resources */ = {isa = PBXBuildFile; fileRef = D496B3E5177A2AE300376A10 /* divider.png */; };
+		D496B3F8177A2AE300376A10 /* divider@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D496B3E6177A2AE300376A10 /* divider@2x.png */; };
+		D496B3FB177A2AE300376A10 /* log in button.png in Resources */ = {isa = PBXBuildFile; fileRef = D496B3E9177A2AE300376A10 /* log in button.png */; };
+		D496B3FC177A2AE300376A10 /* log in button@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D496B3EA177A2AE300376A10 /* log in button@2x.png */; };
+		D496B3FD177A2AE300376A10 /* sign up button.png in Resources */ = {isa = PBXBuildFile; fileRef = D496B3EB177A2AE300376A10 /* sign up button.png */; };
+		D496B3FE177A2AE300376A10 /* sign up button@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D496B3EC177A2AE300376A10 /* sign up button@2x.png */; };
+		D496B3FF177A2AE300376A10 /* timer icon active.png in Resources */ = {isa = PBXBuildFile; fileRef = D496B3ED177A2AE300376A10 /* timer icon active.png */; };
+		D496B400177A2AE300376A10 /* timer icon active@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D496B3EE177A2AE300376A10 /* timer icon active@2x.png */; };
+		D496B401177A2AE300376A10 /* timer icon inactive large.png in Resources */ = {isa = PBXBuildFile; fileRef = D496B3EF177A2AE300376A10 /* timer icon inactive large.png */; };
+		D496B402177A2AE300376A10 /* timer icon inactive large@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D496B3F0177A2AE300376A10 /* timer icon inactive large@2x.png */; };
+		D496B403177A2AE300376A10 /* timer icon inactive.png in Resources */ = {isa = PBXBuildFile; fileRef = D496B3F1177A2AE300376A10 /* timer icon inactive.png */; };
+		D496B404177A2AE300376A10 /* timer icon inactive@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D496B3F2177A2AE300376A10 /* timer icon inactive@2x.png */; };
+		D4E3D87C1776921A001ABA72 /* INAppStoreWindow.m in Sources */ = {isa = PBXBuildFile; fileRef = D4E3D8791776921A001ABA72 /* INAppStoreWindow.m */; };
+		D4E3D87D1776921A001ABA72 /* INWindowButton.m in Sources */ = {isa = PBXBuildFile; fileRef = D4E3D87B1776921A001ABA72 /* INWindowButton.m */; };
+		D4E3D88217769DB9001ABA72 /* active selected background.png in Resources */ = {isa = PBXBuildFile; fileRef = D4E3D87E17769DB9001ABA72 /* active selected background.png */; };
+		D4E3D88317769DB9001ABA72 /* active selected background@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D4E3D87F17769DB9001ABA72 /* active selected background@2x.png */; };
+		D4E3D88417769DB9001ABA72 /* completed selected background.png in Resources */ = {isa = PBXBuildFile; fileRef = D4E3D88017769DB9001ABA72 /* completed selected background.png */; };
+		D4E3D88517769DB9001ABA72 /* completed selected background@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D4E3D88117769DB9001ABA72 /* completed selected background@2x.png */; };
+		D4EAA2A51776B5EA0050A73D /* TOKCompletedSectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D4EAA2A31776B5EA0050A73D /* TOKCompletedSectionViewController.m */; };
+		D4EAA2A61776B5EA0050A73D /* TOKCompletedSectionViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D4EAA2A41776B5EA0050A73D /* TOKCompletedSectionViewController.xib */; };
+		D4EAA2AA1776B6500050A73D /* TOKActiveSectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D4EAA2A81776B6500050A73D /* TOKActiveSectionViewController.m */; };
+		D4EAA2AB1776B6500050A73D /* TOKActiveSectionViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D4EAA2A91776B6500050A73D /* TOKActiveSectionViewController.xib */; };
+		D4EAA2B81776BD080050A73D /* checked.png in Resources */ = {isa = PBXBuildFile; fileRef = D4EAA2AC1776BD080050A73D /* checked.png */; };
+		D4EAA2B91776BD080050A73D /* checked@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D4EAA2AD1776BD080050A73D /* checked@2x.png */; };
+		D4EAA2BA1776BD080050A73D /* pause.png in Resources */ = {isa = PBXBuildFile; fileRef = D4EAA2AE1776BD080050A73D /* pause.png */; };
+		D4EAA2BB1776BD080050A73D /* pause@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D4EAA2AF1776BD080050A73D /* pause@2x.png */; };
+		D4EAA2BC1776BD080050A73D /* play.png in Resources */ = {isa = PBXBuildFile; fileRef = D4EAA2B01776BD080050A73D /* play.png */; };
+		D4EAA2BD1776BD080050A73D /* play@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D4EAA2B11776BD080050A73D /* play@2x.png */; };
+		D4EAA2BE1776BD080050A73D /* task complete.png in Resources */ = {isa = PBXBuildFile; fileRef = D4EAA2B21776BD080050A73D /* task complete.png */; };
+		D4EAA2BF1776BD080050A73D /* task complete@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D4EAA2B31776BD080050A73D /* task complete@2x.png */; };
+		D4EAA2C21776BD080050A73D /* unchecked.png in Resources */ = {isa = PBXBuildFile; fileRef = D4EAA2B61776BD080050A73D /* unchecked.png */; };
+		D4EAA2C31776BD080050A73D /* unchecked@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D4EAA2B71776BD080050A73D /* unchecked@2x.png */; };
+		D4EAA2C51776CC4E0050A73D /* ParseOSX.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D4EAA2C41776CC4E0050A73D /* ParseOSX.framework */; };
+		D4EAA2C71776CD6F0050A73D /* ParseOSX.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = D4EAA2C41776CC4E0050A73D /* ParseOSX.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		D4EAA2C61776CD5B0050A73D /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 12;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				D4EAA2C71776CD6F0050A73D /* ParseOSX.framework in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		D400CAF4179CA6BD0025ABD7 /* active annotation.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "active annotation.png"; sourceTree = "<group>"; };
+		D400CAF5179CA6BD0025ABD7 /* active annotation@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "active annotation@2x.png"; sourceTree = "<group>"; };
+		D400CAF6179CA6BD0025ABD7 /* completed annotation.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "completed annotation.png"; sourceTree = "<group>"; };
+		D400CAF7179CA6BD0025ABD7 /* completed annotation@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "completed annotation@2x.png"; sourceTree = "<group>"; };
+		D400CAF8179CA6BD0025ABD7 /* delete annotation.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "delete annotation.png"; sourceTree = "<group>"; };
+		D400CAF9179CA6BD0025ABD7 /* delete annotation@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "delete annotation@2x.png"; sourceTree = "<group>"; };
+		D408100A1781F7E4004778C6 /* Tock.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = Tock.icns; sourceTree = SOURCE_ROOT; };
+		D41957B5177759E1005873EA /* RSCategories.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RSCategories.h; path = Utilities/RSCategories.h; sourceTree = "<group>"; };
+		D41957BB1778D39D005873EA /* TOKAddNewTaskViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TOKAddNewTaskViewController.h; sourceTree = "<group>"; };
+		D41957BC1778D39D005873EA /* TOKAddNewTaskViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TOKAddNewTaskViewController.m; sourceTree = "<group>"; };
+		D41957C01778D491005873EA /* edit pencil.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "edit pencil.png"; sourceTree = "<group>"; };
+		D41957C11778D491005873EA /* edit pencil@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "edit pencil@2x.png"; sourceTree = "<group>"; };
+		D41957C21778D491005873EA /* hit enter symbol.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "hit enter symbol.png"; sourceTree = "<group>"; };
+		D41957C31778D491005873EA /* hit enter symbol@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "hit enter symbol@2x.png"; sourceTree = "<group>"; };
+		D41957C41778D491005873EA /* new task textbox.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "new task textbox.png"; sourceTree = "<group>"; };
+		D41957C51778D491005873EA /* new task textbox@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "new task textbox@2x.png"; sourceTree = "<group>"; };
+		D41957C61778D491005873EA /* task edit textbox.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "task edit textbox.png"; sourceTree = "<group>"; };
+		D41957C71778D491005873EA /* task edit textbox@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "task edit textbox@2x.png"; sourceTree = "<group>"; };
+		D41B8253177CC9CF009CBBDC /* facebook sign up button active.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "facebook sign up button active.png"; sourceTree = "<group>"; };
+		D41B8254177CC9D0009CBBDC /* facebook sign up button active@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "facebook sign up button active@2x.png"; sourceTree = "<group>"; };
+		D41B8255177CC9D0009CBBDC /* facebook sign up button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "facebook sign up button.png"; sourceTree = "<group>"; };
+		D41B8256177CC9D0009CBBDC /* facebook sign up button@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "facebook sign up button@2x.png"; sourceTree = "<group>"; };
+		D41B8257177CC9D0009CBBDC /* log in button active.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "log in button active.png"; sourceTree = "<group>"; };
+		D41B8258177CC9D0009CBBDC /* log in button active@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "log in button active@2x.png"; sourceTree = "<group>"; };
+		D41B8259177CC9D0009CBBDC /* sign up button active.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "sign up button active.png"; sourceTree = "<group>"; };
+		D41B825A177CC9D0009CBBDC /* sign up button active@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "sign up button active@2x.png"; sourceTree = "<group>"; };
+		D437062A178326E800F0427C /* TOKSubtask.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TOKSubtask.h; path = Data/TOKSubtask.h; sourceTree = "<group>"; };
+		D437062B178326E800F0427C /* TOKSubtask.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TOKSubtask.m; path = Data/TOKSubtask.m; sourceTree = "<group>"; };
+		D44555911773F1C100A8A24C /* Tock.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Tock.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		D44555941773F1C100A8A24C /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
+		D44555971773F1C100A8A24C /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
+		D44555981773F1C100A8A24C /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		D44555991773F1C100A8A24C /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		D445559C1773F1C100A8A24C /* Tock-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Tock-Info.plist"; sourceTree = "<group>"; };
+		D445559E1773F1C100A8A24C /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		D44555A01773F1C100A8A24C /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		D44555A21773F1C100A8A24C /* Tock-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Tock-Prefix.pch"; sourceTree = "<group>"; };
+		D44555A41773F1C100A8A24C /* en */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; name = en; path = en.lproj/Credits.rtf; sourceTree = "<group>"; };
+		D44555A61773F1C100A8A24C /* TOKAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TOKAppDelegate.h; sourceTree = "<group>"; };
+		D44555A71773F1C100A8A24C /* TOKAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TOKAppDelegate.m; sourceTree = "<group>"; };
+		D44555AA1773F1C100A8A24C /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/TOKMainWindow.xib; sourceTree = "<group>"; };
+		D44555AD1773F1C100A8A24C /* Tock.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Tock.xcdatamodel; sourceTree = "<group>"; };
+		D44555B41773F4AC00A8A24C /* TOKMainWindow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TOKMainWindow.h; sourceTree = "<group>"; };
+		D44555B51773F4AC00A8A24C /* TOKMainWindow.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TOKMainWindow.m; sourceTree = "<group>"; };
+		D44555B8177614ED00A8A24C /* new task.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "new task.png"; sourceTree = "<group>"; };
+		D44555B9177614ED00A8A24C /* new task@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "new task@2x.png"; sourceTree = "<group>"; };
+		D44555BC1776167C00A8A24C /* new task active.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "new task active.png"; sourceTree = "<group>"; };
+		D44555BD1776167C00A8A24C /* new task active@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "new task active@2x.png"; sourceTree = "<group>"; };
+		D44555D11776456900A8A24C /* mid section background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "mid section background.png"; sourceTree = "<group>"; };
+		D45C101F177E60F600C52A0C /* send button active.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "send button active.png"; sourceTree = "<group>"; };
+		D45C1020177E60F600C52A0C /* send button active@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "send button active@2x.png"; sourceTree = "<group>"; };
+		D45C1021177E60F600C52A0C /* send button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "send button.png"; sourceTree = "<group>"; };
+		D45C1022177E60F600C52A0C /* send button@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "send button@2x.png"; sourceTree = "<group>"; };
+		D460925917820B9A00C22462 /* TOKAddNewTaskViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TOKAddNewTaskViewController.xib; sourceTree = "<group>"; };
+		D46B59111789C68A004D3F7B /* TOKSettings.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TOKSettings.h; path = Data/TOKSettings.h; sourceTree = "<group>"; };
+		D46B59121789C68A004D3F7B /* TOKSettings.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TOKSettings.m; path = Data/TOKSettings.m; sourceTree = "<group>"; };
+		D4821E071780A4D10063EC8C /* back arrow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "back arrow.png"; sourceTree = "<group>"; };
+		D4821E081780A4D10063EC8C /* back arrow@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "back arrow@2x.png"; sourceTree = "<group>"; };
+		D4821E0C1780C4410063EC8C /* TOKAuthenticationWindowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TOKAuthenticationWindowController.h; path = Authentication/TOKAuthenticationWindowController.h; sourceTree = "<group>"; };
+		D4821E0D1780C4410063EC8C /* TOKAuthenticationWindowController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TOKAuthenticationWindowController.m; path = Authentication/TOKAuthenticationWindowController.m; sourceTree = "<group>"; };
+		D4821E0E1780C4410063EC8C /* TOKAuthenticationWindowController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = TOKAuthenticationWindowController.xib; path = Authentication/TOKAuthenticationWindowController.xib; sourceTree = "<group>"; };
+		D4821E121780C4700063EC8C /* TOKBaseView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TOKBaseView.h; path = "Base Classes/TOKBaseView.h"; sourceTree = "<group>"; };
+		D4821E131780C4700063EC8C /* TOKBaseView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TOKBaseView.m; path = "Base Classes/TOKBaseView.m"; sourceTree = "<group>"; };
+		D4821E141780C4700063EC8C /* TOKBaseWindow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TOKBaseWindow.h; path = "Base Classes/TOKBaseWindow.h"; sourceTree = "<group>"; };
+		D4821E151780C4700063EC8C /* TOKBaseWindow.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TOKBaseWindow.m; path = "Base Classes/TOKBaseWindow.m"; sourceTree = "<group>"; };
+		D4821E161780C4700063EC8C /* TOKGlobals.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TOKGlobals.h; path = "Base Classes/TOKGlobals.h"; sourceTree = "<group>"; };
+		D4821E1A1780ED3D0063EC8C /* TOKTask.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TOKTask.h; path = Data/TOKTask.h; sourceTree = "<group>"; };
+		D4821E1B1780ED3D0063EC8C /* TOKTask.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TOKTask.m; path = Data/TOKTask.m; sourceTree = "<group>"; };
+		D496B3E1177A2AE300376A10 /* auth textbox invalid.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "auth textbox invalid.png"; sourceTree = "<group>"; };
+		D496B3E2177A2AE300376A10 /* auth textbox invalid@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "auth textbox invalid@2x.png"; sourceTree = "<group>"; };
+		D496B3E3177A2AE300376A10 /* auth textbox.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "auth textbox.png"; sourceTree = "<group>"; };
+		D496B3E4177A2AE300376A10 /* auth textbox@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "auth textbox@2x.png"; sourceTree = "<group>"; };
+		D496B3E5177A2AE300376A10 /* divider.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = divider.png; sourceTree = "<group>"; };
+		D496B3E6177A2AE300376A10 /* divider@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "divider@2x.png"; sourceTree = "<group>"; };
+		D496B3E9177A2AE300376A10 /* log in button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "log in button.png"; sourceTree = "<group>"; };
+		D496B3EA177A2AE300376A10 /* log in button@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "log in button@2x.png"; sourceTree = "<group>"; };
+		D496B3EB177A2AE300376A10 /* sign up button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "sign up button.png"; sourceTree = "<group>"; };
+		D496B3EC177A2AE300376A10 /* sign up button@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "sign up button@2x.png"; sourceTree = "<group>"; };
+		D496B3ED177A2AE300376A10 /* timer icon active.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "timer icon active.png"; sourceTree = "<group>"; };
+		D496B3EE177A2AE300376A10 /* timer icon active@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "timer icon active@2x.png"; sourceTree = "<group>"; };
+		D496B3EF177A2AE300376A10 /* timer icon inactive large.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "timer icon inactive large.png"; sourceTree = "<group>"; };
+		D496B3F0177A2AE300376A10 /* timer icon inactive large@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "timer icon inactive large@2x.png"; sourceTree = "<group>"; };
+		D496B3F1177A2AE300376A10 /* timer icon inactive.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "timer icon inactive.png"; sourceTree = "<group>"; };
+		D496B3F2177A2AE300376A10 /* timer icon inactive@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "timer icon inactive@2x.png"; sourceTree = "<group>"; };
+		D4E3D8781776921A001ABA72 /* INAppStoreWindow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = INAppStoreWindow.h; path = Utilities/INAppStoreWindow.h; sourceTree = "<group>"; };
+		D4E3D8791776921A001ABA72 /* INAppStoreWindow.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = INAppStoreWindow.m; path = Utilities/INAppStoreWindow.m; sourceTree = "<group>"; };
+		D4E3D87A1776921A001ABA72 /* INWindowButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = INWindowButton.h; path = Utilities/INWindowButton.h; sourceTree = "<group>"; };
+		D4E3D87B1776921A001ABA72 /* INWindowButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = INWindowButton.m; path = Utilities/INWindowButton.m; sourceTree = "<group>"; };
+		D4E3D87E17769DB9001ABA72 /* active selected background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "active selected background.png"; sourceTree = "<group>"; };
+		D4E3D87F17769DB9001ABA72 /* active selected background@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "active selected background@2x.png"; sourceTree = "<group>"; };
+		D4E3D88017769DB9001ABA72 /* completed selected background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "completed selected background.png"; sourceTree = "<group>"; };
+		D4E3D88117769DB9001ABA72 /* completed selected background@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "completed selected background@2x.png"; sourceTree = "<group>"; };
+		D4EAA2A21776B5EA0050A73D /* TOKCompletedSectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TOKCompletedSectionViewController.h; sourceTree = "<group>"; };
+		D4EAA2A31776B5EA0050A73D /* TOKCompletedSectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TOKCompletedSectionViewController.m; sourceTree = "<group>"; };
+		D4EAA2A41776B5EA0050A73D /* TOKCompletedSectionViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TOKCompletedSectionViewController.xib; sourceTree = "<group>"; };
+		D4EAA2A71776B6500050A73D /* TOKActiveSectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TOKActiveSectionViewController.h; sourceTree = "<group>"; };
+		D4EAA2A81776B6500050A73D /* TOKActiveSectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TOKActiveSectionViewController.m; sourceTree = "<group>"; };
+		D4EAA2A91776B6500050A73D /* TOKActiveSectionViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TOKActiveSectionViewController.xib; sourceTree = "<group>"; };
+		D4EAA2AC1776BD080050A73D /* checked.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = checked.png; sourceTree = "<group>"; };
+		D4EAA2AD1776BD080050A73D /* checked@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "checked@2x.png"; sourceTree = "<group>"; };
+		D4EAA2AE1776BD080050A73D /* pause.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = pause.png; sourceTree = "<group>"; };
+		D4EAA2AF1776BD080050A73D /* pause@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "pause@2x.png"; sourceTree = "<group>"; };
+		D4EAA2B01776BD080050A73D /* play.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = play.png; sourceTree = "<group>"; };
+		D4EAA2B11776BD080050A73D /* play@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "play@2x.png"; sourceTree = "<group>"; };
+		D4EAA2B21776BD080050A73D /* task complete.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "task complete.png"; sourceTree = "<group>"; };
+		D4EAA2B31776BD080050A73D /* task complete@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "task complete@2x.png"; sourceTree = "<group>"; };
+		D4EAA2B61776BD080050A73D /* unchecked.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = unchecked.png; sourceTree = "<group>"; };
+		D4EAA2B71776BD080050A73D /* unchecked@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "unchecked@2x.png"; sourceTree = "<group>"; };
+		D4EAA2C41776CC4E0050A73D /* ParseOSX.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ParseOSX.framework; path = Tock/Resources/ParseOSX.framework; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		D445558E1773F1C100A8A24C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D4EAA2C51776CC4E0050A73D /* ParseOSX.framework in Frameworks */,
+				D44555951773F1C100A8A24C /* Cocoa.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		D44555881773F1C100A8A24C = {
+			isa = PBXGroup;
+			children = (
+				D445559A1773F1C100A8A24C /* Tock */,
+				D44555931773F1C100A8A24C /* Frameworks */,
+				D44555921773F1C100A8A24C /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		D44555921773F1C100A8A24C /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				D44555911773F1C100A8A24C /* Tock.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		D44555931773F1C100A8A24C /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				D4EAA2C41776CC4E0050A73D /* ParseOSX.framework */,
+				D44555941773F1C100A8A24C /* Cocoa.framework */,
+				D44555961773F1C100A8A24C /* Other Frameworks */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		D44555961773F1C100A8A24C /* Other Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				D44555971773F1C100A8A24C /* AppKit.framework */,
+				D44555981773F1C100A8A24C /* CoreData.framework */,
+				D44555991773F1C100A8A24C /* Foundation.framework */,
+			);
+			name = "Other Frameworks";
+			sourceTree = "<group>";
+		};
+		D445559A1773F1C100A8A24C /* Tock */ = {
+			isa = PBXGroup;
+			children = (
+				D4821E191780ED160063EC8C /* Data */,
+				D44555CA17763B7200A8A24C /* Utilities */,
+				D4821E0B1780C4190063EC8C /* Authentication */,
+				D4821E111780C4650063EC8C /* Base Classes */,
+				D44555B41773F4AC00A8A24C /* TOKMainWindow.h */,
+				D44555B51773F4AC00A8A24C /* TOKMainWindow.m */,
+				D44555A61773F1C100A8A24C /* TOKAppDelegate.h */,
+				D44555A71773F1C100A8A24C /* TOKAppDelegate.m */,
+				D44555A91773F1C100A8A24C /* TOKMainWindow.xib */,
+				D4EAA2A21776B5EA0050A73D /* TOKCompletedSectionViewController.h */,
+				D4EAA2A31776B5EA0050A73D /* TOKCompletedSectionViewController.m */,
+				D4EAA2A41776B5EA0050A73D /* TOKCompletedSectionViewController.xib */,
+				D4EAA2A71776B6500050A73D /* TOKActiveSectionViewController.h */,
+				D4EAA2A81776B6500050A73D /* TOKActiveSectionViewController.m */,
+				D4EAA2A91776B6500050A73D /* TOKActiveSectionViewController.xib */,
+				D41957BB1778D39D005873EA /* TOKAddNewTaskViewController.h */,
+				D41957BC1778D39D005873EA /* TOKAddNewTaskViewController.m */,
+				D460925917820B9A00C22462 /* TOKAddNewTaskViewController.xib */,
+				D4821E161780C4700063EC8C /* TOKGlobals.h */,
+				D44555AC1773F1C100A8A24C /* Tock.xcdatamodeld */,
+				D445559B1773F1C100A8A24C /* Supporting Files */,
+			);
+			path = Tock;
+			sourceTree = "<group>";
+		};
+		D445559B1773F1C100A8A24C /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				D44555B7177614ED00A8A24C /* Images */,
+				D445559C1773F1C100A8A24C /* Tock-Info.plist */,
+				D445559D1773F1C100A8A24C /* InfoPlist.strings */,
+				D44555A01773F1C100A8A24C /* main.m */,
+				D44555A21773F1C100A8A24C /* Tock-Prefix.pch */,
+				D44555A31773F1C100A8A24C /* Credits.rtf */,
+				D408100A1781F7E4004778C6 /* Tock.icns */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		D44555B7177614ED00A8A24C /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				D400CAF4179CA6BD0025ABD7 /* active annotation.png */,
+				D400CAF5179CA6BD0025ABD7 /* active annotation@2x.png */,
+				D400CAF6179CA6BD0025ABD7 /* completed annotation.png */,
+				D400CAF7179CA6BD0025ABD7 /* completed annotation@2x.png */,
+				D400CAF8179CA6BD0025ABD7 /* delete annotation.png */,
+				D400CAF9179CA6BD0025ABD7 /* delete annotation@2x.png */,
+				D4821E071780A4D10063EC8C /* back arrow.png */,
+				D4821E081780A4D10063EC8C /* back arrow@2x.png */,
+				D45C101F177E60F600C52A0C /* send button active.png */,
+				D45C1020177E60F600C52A0C /* send button active@2x.png */,
+				D45C1021177E60F600C52A0C /* send button.png */,
+				D45C1022177E60F600C52A0C /* send button@2x.png */,
+				D41B8253177CC9CF009CBBDC /* facebook sign up button active.png */,
+				D41B8254177CC9D0009CBBDC /* facebook sign up button active@2x.png */,
+				D41B8255177CC9D0009CBBDC /* facebook sign up button.png */,
+				D41B8256177CC9D0009CBBDC /* facebook sign up button@2x.png */,
+				D41B8257177CC9D0009CBBDC /* log in button active.png */,
+				D41B8258177CC9D0009CBBDC /* log in button active@2x.png */,
+				D41B8259177CC9D0009CBBDC /* sign up button active.png */,
+				D41B825A177CC9D0009CBBDC /* sign up button active@2x.png */,
+				D496B3E1177A2AE300376A10 /* auth textbox invalid.png */,
+				D496B3E2177A2AE300376A10 /* auth textbox invalid@2x.png */,
+				D496B3E3177A2AE300376A10 /* auth textbox.png */,
+				D496B3E4177A2AE300376A10 /* auth textbox@2x.png */,
+				D496B3E5177A2AE300376A10 /* divider.png */,
+				D496B3E6177A2AE300376A10 /* divider@2x.png */,
+				D496B3E9177A2AE300376A10 /* log in button.png */,
+				D496B3EA177A2AE300376A10 /* log in button@2x.png */,
+				D496B3EB177A2AE300376A10 /* sign up button.png */,
+				D496B3EC177A2AE300376A10 /* sign up button@2x.png */,
+				D496B3ED177A2AE300376A10 /* timer icon active.png */,
+				D496B3EE177A2AE300376A10 /* timer icon active@2x.png */,
+				D496B3EF177A2AE300376A10 /* timer icon inactive large.png */,
+				D496B3F0177A2AE300376A10 /* timer icon inactive large@2x.png */,
+				D496B3F1177A2AE300376A10 /* timer icon inactive.png */,
+				D496B3F2177A2AE300376A10 /* timer icon inactive@2x.png */,
+				D41957C01778D491005873EA /* edit pencil.png */,
+				D41957C11778D491005873EA /* edit pencil@2x.png */,
+				D41957C21778D491005873EA /* hit enter symbol.png */,
+				D41957C31778D491005873EA /* hit enter symbol@2x.png */,
+				D41957C41778D491005873EA /* new task textbox.png */,
+				D41957C51778D491005873EA /* new task textbox@2x.png */,
+				D41957C61778D491005873EA /* task edit textbox.png */,
+				D41957C71778D491005873EA /* task edit textbox@2x.png */,
+				D4EAA2AC1776BD080050A73D /* checked.png */,
+				D4EAA2AD1776BD080050A73D /* checked@2x.png */,
+				D4EAA2B61776BD080050A73D /* unchecked.png */,
+				D4EAA2B71776BD080050A73D /* unchecked@2x.png */,
+				D4EAA2AE1776BD080050A73D /* pause.png */,
+				D4EAA2AF1776BD080050A73D /* pause@2x.png */,
+				D4EAA2B01776BD080050A73D /* play.png */,
+				D4EAA2B11776BD080050A73D /* play@2x.png */,
+				D4EAA2B21776BD080050A73D /* task complete.png */,
+				D4EAA2B31776BD080050A73D /* task complete@2x.png */,
+				D4E3D87E17769DB9001ABA72 /* active selected background.png */,
+				D4E3D87F17769DB9001ABA72 /* active selected background@2x.png */,
+				D4E3D88017769DB9001ABA72 /* completed selected background.png */,
+				D4E3D88117769DB9001ABA72 /* completed selected background@2x.png */,
+				D44555D11776456900A8A24C /* mid section background.png */,
+				D44555BC1776167C00A8A24C /* new task active.png */,
+				D44555BD1776167C00A8A24C /* new task active@2x.png */,
+				D44555B8177614ED00A8A24C /* new task.png */,
+				D44555B9177614ED00A8A24C /* new task@2x.png */,
+			);
+			name = Images;
+			path = Resources/Images;
+			sourceTree = "<group>";
+		};
+		D44555CA17763B7200A8A24C /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				D4E3D8781776921A001ABA72 /* INAppStoreWindow.h */,
+				D4E3D8791776921A001ABA72 /* INAppStoreWindow.m */,
+				D4E3D87A1776921A001ABA72 /* INWindowButton.h */,
+				D4E3D87B1776921A001ABA72 /* INWindowButton.m */,
+				D41957B5177759E1005873EA /* RSCategories.h */,
+			);
+			name = Utilities;
+			sourceTree = "<group>";
+		};
+		D4821E0B1780C4190063EC8C /* Authentication */ = {
+			isa = PBXGroup;
+			children = (
+				D4821E0C1780C4410063EC8C /* TOKAuthenticationWindowController.h */,
+				D4821E0D1780C4410063EC8C /* TOKAuthenticationWindowController.m */,
+				D4821E0E1780C4410063EC8C /* TOKAuthenticationWindowController.xib */,
+			);
+			name = Authentication;
+			sourceTree = "<group>";
+		};
+		D4821E111780C4650063EC8C /* Base Classes */ = {
+			isa = PBXGroup;
+			children = (
+				D4821E121780C4700063EC8C /* TOKBaseView.h */,
+				D4821E131780C4700063EC8C /* TOKBaseView.m */,
+				D4821E141780C4700063EC8C /* TOKBaseWindow.h */,
+				D4821E151780C4700063EC8C /* TOKBaseWindow.m */,
+			);
+			name = "Base Classes";
+			sourceTree = "<group>";
+		};
+		D4821E191780ED160063EC8C /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				D437062A178326E800F0427C /* TOKSubtask.h */,
+				D437062B178326E800F0427C /* TOKSubtask.m */,
+				D4821E1A1780ED3D0063EC8C /* TOKTask.h */,
+				D4821E1B1780ED3D0063EC8C /* TOKTask.m */,
+				D46B59111789C68A004D3F7B /* TOKSettings.h */,
+				D46B59121789C68A004D3F7B /* TOKSettings.m */,
+			);
+			name = Data;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		D44555901773F1C100A8A24C /* Tock */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D44555B11773F1C100A8A24C /* Build configuration list for PBXNativeTarget "Tock" */;
+			buildPhases = (
+				D445558D1773F1C100A8A24C /* Sources */,
+				D445558E1773F1C100A8A24C /* Frameworks */,
+				D445558F1773F1C100A8A24C /* Resources */,
+				D4EAA2C61776CD5B0050A73D /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Tock;
+			productName = Tock;
+			productReference = D44555911773F1C100A8A24C /* Tock.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		D44555891773F1C100A8A24C /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				CLASSPREFIX = TOK;
+				LastUpgradeCheck = 0460;
+				ORGANIZATIONNAME = "Rob DeRosa";
+			};
+			buildConfigurationList = D445558C1773F1C100A8A24C /* Build configuration list for PBXProject "Tock" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = D44555881773F1C100A8A24C;
+			productRefGroup = D44555921773F1C100A8A24C /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				D44555901773F1C100A8A24C /* Tock */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		D445558F1773F1C100A8A24C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D445559F1773F1C100A8A24C /* InfoPlist.strings in Resources */,
+				D44555A51773F1C100A8A24C /* Credits.rtf in Resources */,
+				D44555AB1773F1C100A8A24C /* TOKMainWindow.xib in Resources */,
+				D44555BA177614ED00A8A24C /* new task.png in Resources */,
+				D44555BB177614ED00A8A24C /* new task@2x.png in Resources */,
+				D44555BE1776167C00A8A24C /* new task active.png in Resources */,
+				D44555BF1776167C00A8A24C /* new task active@2x.png in Resources */,
+				D44555D21776456900A8A24C /* mid section background.png in Resources */,
+				D4E3D88217769DB9001ABA72 /* active selected background.png in Resources */,
+				D4E3D88317769DB9001ABA72 /* active selected background@2x.png in Resources */,
+				D4E3D88417769DB9001ABA72 /* completed selected background.png in Resources */,
+				D4E3D88517769DB9001ABA72 /* completed selected background@2x.png in Resources */,
+				D4EAA2A61776B5EA0050A73D /* TOKCompletedSectionViewController.xib in Resources */,
+				D4EAA2AB1776B6500050A73D /* TOKActiveSectionViewController.xib in Resources */,
+				D4EAA2B81776BD080050A73D /* checked.png in Resources */,
+				D4EAA2B91776BD080050A73D /* checked@2x.png in Resources */,
+				D4EAA2BA1776BD080050A73D /* pause.png in Resources */,
+				D4EAA2BB1776BD080050A73D /* pause@2x.png in Resources */,
+				D4EAA2BC1776BD080050A73D /* play.png in Resources */,
+				D4EAA2BD1776BD080050A73D /* play@2x.png in Resources */,
+				D4EAA2BE1776BD080050A73D /* task complete.png in Resources */,
+				D4EAA2BF1776BD080050A73D /* task complete@2x.png in Resources */,
+				D4EAA2C21776BD080050A73D /* unchecked.png in Resources */,
+				D4EAA2C31776BD080050A73D /* unchecked@2x.png in Resources */,
+				D41957C81778D491005873EA /* edit pencil.png in Resources */,
+				D41957C91778D491005873EA /* edit pencil@2x.png in Resources */,
+				D41957CA1778D491005873EA /* hit enter symbol.png in Resources */,
+				D41957CB1778D491005873EA /* hit enter symbol@2x.png in Resources */,
+				D41957CC1778D491005873EA /* new task textbox.png in Resources */,
+				D41957CD1778D491005873EA /* new task textbox@2x.png in Resources */,
+				D41957CE1778D491005873EA /* task edit textbox.png in Resources */,
+				D41957CF1778D491005873EA /* task edit textbox@2x.png in Resources */,
+				D496B3F3177A2AE300376A10 /* auth textbox invalid.png in Resources */,
+				D496B3F4177A2AE300376A10 /* auth textbox invalid@2x.png in Resources */,
+				D496B3F5177A2AE300376A10 /* auth textbox.png in Resources */,
+				D496B3F6177A2AE300376A10 /* auth textbox@2x.png in Resources */,
+				D496B3F7177A2AE300376A10 /* divider.png in Resources */,
+				D496B3F8177A2AE300376A10 /* divider@2x.png in Resources */,
+				D496B3FB177A2AE300376A10 /* log in button.png in Resources */,
+				D496B3FC177A2AE300376A10 /* log in button@2x.png in Resources */,
+				D496B3FD177A2AE300376A10 /* sign up button.png in Resources */,
+				D496B3FE177A2AE300376A10 /* sign up button@2x.png in Resources */,
+				D496B3FF177A2AE300376A10 /* timer icon active.png in Resources */,
+				D496B400177A2AE300376A10 /* timer icon active@2x.png in Resources */,
+				D496B401177A2AE300376A10 /* timer icon inactive large.png in Resources */,
+				D496B402177A2AE300376A10 /* timer icon inactive large@2x.png in Resources */,
+				D496B403177A2AE300376A10 /* timer icon inactive.png in Resources */,
+				D496B404177A2AE300376A10 /* timer icon inactive@2x.png in Resources */,
+				D41B825D177CC9D1009CBBDC /* facebook sign up button active.png in Resources */,
+				D41B825E177CC9D1009CBBDC /* facebook sign up button active@2x.png in Resources */,
+				D41B825F177CC9D1009CBBDC /* facebook sign up button.png in Resources */,
+				D41B8260177CC9D1009CBBDC /* facebook sign up button@2x.png in Resources */,
+				D41B8261177CC9D1009CBBDC /* log in button active.png in Resources */,
+				D41B8262177CC9D1009CBBDC /* log in button active@2x.png in Resources */,
+				D41B8263177CC9D1009CBBDC /* sign up button active.png in Resources */,
+				D41B8264177CC9D1009CBBDC /* sign up button active@2x.png in Resources */,
+				D45C1023177E60F600C52A0C /* send button active.png in Resources */,
+				D45C1024177E60F600C52A0C /* send button active@2x.png in Resources */,
+				D45C1025177E60F600C52A0C /* send button.png in Resources */,
+				D45C1026177E60F600C52A0C /* send button@2x.png in Resources */,
+				D4821E091780A4D10063EC8C /* back arrow.png in Resources */,
+				D4821E0A1780A4D10063EC8C /* back arrow@2x.png in Resources */,
+				D4821E101780C4410063EC8C /* TOKAuthenticationWindowController.xib in Resources */,
+				D408100B1781F7E4004778C6 /* Tock.icns in Resources */,
+				D460925A17820B9A00C22462 /* TOKAddNewTaskViewController.xib in Resources */,
+				D400CAFA179CA6BD0025ABD7 /* active annotation.png in Resources */,
+				D400CAFB179CA6BD0025ABD7 /* active annotation@2x.png in Resources */,
+				D400CAFC179CA6BD0025ABD7 /* completed annotation.png in Resources */,
+				D400CAFD179CA6BD0025ABD7 /* completed annotation@2x.png in Resources */,
+				D400CAFE179CA6BD0025ABD7 /* delete annotation.png in Resources */,
+				D400CAFF179CA6BD0025ABD7 /* delete annotation@2x.png in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		D445558D1773F1C100A8A24C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D44555A11773F1C100A8A24C /* main.m in Sources */,
+				D44555A81773F1C100A8A24C /* TOKAppDelegate.m in Sources */,
+				D44555AE1773F1C100A8A24C /* Tock.xcdatamodeld in Sources */,
+				D44555B61773F4AC00A8A24C /* TOKMainWindow.m in Sources */,
+				D4E3D87C1776921A001ABA72 /* INAppStoreWindow.m in Sources */,
+				D4E3D87D1776921A001ABA72 /* INWindowButton.m in Sources */,
+				D4EAA2A51776B5EA0050A73D /* TOKCompletedSectionViewController.m in Sources */,
+				D4EAA2AA1776B6500050A73D /* TOKActiveSectionViewController.m in Sources */,
+				D41957BE1778D39D005873EA /* TOKAddNewTaskViewController.m in Sources */,
+				D4821E0F1780C4410063EC8C /* TOKAuthenticationWindowController.m in Sources */,
+				D4821E171780C4700063EC8C /* TOKBaseView.m in Sources */,
+				D4821E181780C4700063EC8C /* TOKBaseWindow.m in Sources */,
+				D4821E1C1780ED3D0063EC8C /* TOKTask.m in Sources */,
+				D437062C178326E800F0427C /* TOKSubtask.m in Sources */,
+				D46B59131789C68A004D3F7B /* TOKSettings.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		D445559D1773F1C100A8A24C /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				D445559E1773F1C100A8A24C /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		D44555A31773F1C100A8A24C /* Credits.rtf */ = {
+			isa = PBXVariantGroup;
+			children = (
+				D44555A41773F1C100A8A24C /* en */,
+			);
+			name = Credits.rtf;
+			sourceTree = "<group>";
+		};
+		D44555A91773F1C100A8A24C /* TOKMainWindow.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				D44555AA1773F1C100A8A24C /* en */,
+			);
+			name = TOKMainWindow.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		D44555AF1773F1C100A8A24C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.8;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		D44555B01773F1C100A8A24C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.8;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		D44555B21773F1C100A8A24C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/Tock/Resources\"",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Tock/Tock-Prefix.pch";
+				INFOPLIST_FILE = "Tock/Tock-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		D44555B31773F1C100A8A24C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/Tock/Resources\"",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Tock/Tock-Prefix.pch";
+				INFOPLIST_FILE = "Tock/Tock-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		D445558C1773F1C100A8A24C /* Build configuration list for PBXProject "Tock" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D44555AF1773F1C100A8A24C /* Debug */,
+				D44555B01773F1C100A8A24C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D44555B11773F1C100A8A24C /* Build configuration list for PBXNativeTarget "Tock" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D44555B21773F1C100A8A24C /* Debug */,
+				D44555B31773F1C100A8A24C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		D44555AC1773F1C100A8A24C /* Tock.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				D44555AD1773F1C100A8A24C /* Tock.xcdatamodel */,
+			);
+			currentVersion = D44555AD1773F1C100A8A24C /* Tock.xcdatamodel */;
+			path = Tock.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = D44555891773F1C100A8A24C /* Project object */;
+}

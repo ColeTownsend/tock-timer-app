@@ -1,0 +1,25 @@
+//
+//  TOKActiveSectionViewController.h
+//  Tock
+//
+//  Created by Rob DeRosa on 6/22/13.
+//  Copyright (c) 2013 Rob DeRosa. All rights reserved.
+//  Design copyright 2013 by Cole Townsend
+//
+
+#import <Cocoa/Cocoa.h>
+
+@interface TOKActiveSectionViewController : NSViewController<NSTableViewDelegate, NSTableViewDataSource, NSTextFieldDelegate>
+
+@end
+
+
+
+@interface TOKActiveTaskItemCellView : NSTableCellView
+
+@property BOOL isLast;
+
+-(NSTextField*)getTaskName;
+-(NSButton*)getTaskCheck;
+
+@end

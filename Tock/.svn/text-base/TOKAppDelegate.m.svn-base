@@ -1,0 +1,605 @@
+//
+//  TOKAppDelegate.m
+//  Tock
+//
+//  Created by Rob DeRosa on 6/20/13.
+//  Copyright (c) 2013 Rob DeRosa. All rights reserved.
+//
+
+#import <ParseOSX/Parse.h>
+#import "TOKAppDelegate.h"
+#import "TOKBaseView.h"
+#import "RSCategories.h"
+#import "TOKActiveSectionViewController.h"
+#import "TOKCompletedSectionViewController.h"
+#import "TOKAuthenticationWindowController.h"
+#import "TOKTask.h"
+#import "TOKSubtask.h"
+#import "TOKSettings.h"
+
+TOKAppDelegate* g_AppDelegate = nil;
+
+@interface TOKAppDelegate()
+{
+	NSButton* _selectedButton;
+	NSImage* _activeSectionImage;
+	NSImage* _completedSectionImage;
+	TOKTask* _selectedTask;
+	TOKActiveSectionViewController* _activeView;
+	TOKCompletedSectionViewController* _completedView;
+	NSInteger _modalSheetValue;
+	TOKAuthenticationWindowController* _authController;
+}
+
+@property (weak) IBOutlet NSButton *activeButton;
+@property (weak) IBOutlet NSButton *completedButton;
+@property (weak) IBOutlet NSView *selectedView;
+@property (weak) IBOutlet NSMenuItem *signOutCommand;
+
+@end
+
+@implementation TOKAppDelegate
+
+@synthesize settings;
+@synthesize tasks;
+@synthesize persistentStoreCoordinator = _persistentStoreCoordinator;
+@synthesize managedObjectModel = _managedObjectModel;
+@synthesize managedObjectContext = _managedObjectContext;
+
+- (void)applicationDidFinishLaunching:(NSNotification*)aNotification
+{
+	[self initializeParse];
+}
+
+-(void)awakeFromNib
+{
+	g_AppDelegate = self;
+	[super awakeFromNib];
+	[self updateSelectedState:_activeButton];
+}
+
+-(TOKTask*)getSelectedTask
+{
+	return _selectedTask;
+}
+
+-(void)setSelectedTask:(TOKTask*)task
+{
+	if(_selectedTask == task)
+		return;
+	
+	_selectedTask = task;
+	self.settings.lastSelectedTask = task;
+	[self.settings saveInBackground];
+	
+	[self ensureSubtasksLoaded:task withBlock:^
+	{
+		NSNotification* n = [NSNotification notificationWithName:TOKACTIVE_TASK_CHANGED object:nil];
+		[[NSNotificationCenter defaultCenter] postNotification:n];
+	}];
+}
+
+-(void)ensureSubtasksLoaded:(TOKTask *)task withBlock:(VoidBlock)block
+{
+	PFQuery *query = [PFQuery queryWithClassName:@"Subtask"];
+	[query whereKey:@"parentTask" equalTo:task];
+	[query orderByDescending:@"createdAt"];
+	[query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error)
+	 {
+		 task.subTasks = [NSMutableArray arrayWithArray:objects];
+		 block();
+	 }];
+}
+
+-(void)addNewTask:(TOKTask *)task
+{
+	[task saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error)
+	 {
+		 [self.tasks insertObject:task atIndex:0];
+		 NSNotification* n = [NSNotification notificationWithName:TOKNEW_TASK_ADDED object:task];
+		 [[NSNotificationCenter defaultCenter] postNotification:n];
+	 }];
+}
+
+-(void)showSheetWindow:(NSWindowController*)controller
+{
+	[NSApp beginSheet:controller.window modalForWindow:self.window modalDelegate:nil didEndSelector:NULL contextInfo:NULL];
+	_modalSheetValue = [NSApp runModalForWindow:controller.window];
+	[NSApp endSheet:controller.window];
+	[controller.window orderOut:nil];
+}
+
+- (IBAction)onSectionChanged:(NSButton *)sender
+{
+	[self updateSelectedState:sender];
+}
+
+-(void)updateSelectedState:(NSButton *)sender
+{
+	if(sender == _selectedButton)
+	{
+		[_selectedView setNeedsDisplay:YES];
+		return;
+	}
+	
+	_selectedButton = sender;
+	NSColor *onColor = [NSColor colorWithR:74 G:74 B:74 A:1.0];
+	NSColor *offColor = [NSColor colorWithR:0 G:0 B:0 A:0.30];
+	[_selectedView setSubviews:[NSArray array]];
+	
+	if(_activeButton == _selectedButton)
+	{
+		if(!_activeSectionImage)
+			_activeSectionImage = [NSImage imageNamed:@"active selected background"];
+
+		if(!_activeView)
+			_activeView = [[TOKActiveSectionViewController alloc] initWithNibName:@"TOKActiveSectionViewController" bundle:nil];
+
+		[_activeButton setImage:_activeSectionImage];
+		[_completedButton setImage:nil];
+
+		[_activeButton setTitleColor:onColor];
+		[_completedButton setTitleColor:offColor];
+		[_selectedView addSubview:_activeView.view];
+	}
+	else
+	{
+		if(!_completedSectionImage)
+			_completedSectionImage = [NSImage imageNamed:@"completed selected background"];
+
+		if(!_completedView)
+			_completedView = [[TOKCompletedSectionViewController alloc] initWithNibName:@"TOKCompletedSectionViewController" bundle:nil];
+		
+		[_completedButton setImage:_completedSectionImage];
+		[_activeButton setImage:nil];
+		
+		[_activeButton setTitleColor:offColor];
+		[_completedButton setTitleColor:onColor];
+		[_selectedView addSubview:_completedView.view];
+	}
+	
+	[_activeButton setAlternateImage:_activeButton.image];
+	[_completedButton setAlternateImage:_completedButton.image];
+}
+
+
+-(void)initializeParse
+{
+	[TOKSettings registerSubclass];
+	[TOKTask registerSubclass];
+	[TOKSubtask registerSubclass];
+    [Parse setApplicationId:@"aY0Aw4ZLUXLeU0lL6U6vuWDKsEz7vg1vIkPk1WSj" clientKey:@"ID6FrpxmlHUfMiAamNFMGy5WWnm0aR7plAd5z8SP"];
+    [PFUser enableAutomaticUser];
+
+    PFACL *defaultACL = [PFACL ACL];
+
+    //If you would like all objects to be private by default, remove this line.
+    [defaultACL setPublicReadAccess:YES];
+	
+    [PFACL setDefaultACL:defaultACL withAccessForCurrentUser:YES];
+	[PFAnalytics trackAppOpenedWithLaunchOptions:nil];
+
+	NSNotification* n = [NSNotification notificationWithName:TOKPARSE_SERVICE_AVAILABLE object:nil];
+    [[NSNotificationCenter defaultCenter] postNotification:n];
+	
+	[self onParseAvailable];
+}
+
+-(void)onParseAvailable
+{
+	[TOKAppDelegate runOnMainQueue:1.0 :^
+	 {
+		 if(![PFUser currentUser].email)
+		 {
+			 [self notifyUserLoggedOut];
+		 }
+		 else
+		 {
+			 [self notifyUserAuthenticated];
+		 }
+	 }];
+}
+
+-(void)notifySettingsUpdated
+{
+	NSNotification* n = [NSNotification notificationWithName:TOKSETTINGS_UPDATED object:nil];
+    [[NSNotificationCenter defaultCenter] postNotification:n];
+}
+
+-(void)notifyUserAuthenticated
+{
+	if(!self.settings)
+	{
+		PFQuery *settingsQuery = [PFQuery queryWithClassName:@"Settings"];
+		[settingsQuery findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error)
+		 {
+			 if(objects.count == 0)
+			 {
+				 TOKSettings* sett = [TOKSettings object];
+				 sett.hourlyRate = 50.25;
+				 sett.ACL = [PFACL ACLWithUser:[PFUser currentUser]];
+				 [sett saveInBackground];
+				 self.settings = sett;
+			 }
+			 else
+			 {
+				 self.settings = objects[0];
+			 }
+			 
+			 [self notifySettingsUpdated];
+		 }];
+	}
+	
+	NSNotification* n = [NSNotification notificationWithName:TOKUSER_AUTHENTICATED object:nil];
+    [[NSNotificationCenter defaultCenter] postNotification:n];
+	
+	[self getTasks];
+	[_signOutCommand setAction:@selector(onSignOutClicked:)];
+	[self.window orderFront:self];
+}
+
+-(void)notifyUserLoggedOut
+{
+	[self.window orderOut:self];
+	
+	NSNotification* n = [NSNotification notificationWithName:TOKUSER_LOGGEDOUT object:nil];
+    [[NSNotificationCenter defaultCenter] postNotification:n];
+
+	[_signOutCommand setAction:nil];
+	_authController = [[TOKAuthenticationWindowController alloc] initWithWindowNibName:@"TOKAuthenticationWindowController"];
+	[_authController.window display];
+}
+
+- (IBAction)onSignOutClicked:(id)sender
+{
+	[PFUser logOut];
+	self.settings = nil;
+	[self notifyUserLoggedOut];
+}
+
+-(void)getTasks
+{
+	PFQuery *query = [PFQuery queryWithClassName:@"Task"];
+	[query orderByAscending:@"index"];
+	[query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error)
+	 {
+		 if(!error)
+		 {
+			 self.tasks = [NSMutableArray arrayWithArray:objects];
+			 
+			 if(self.tasks.count > 0)
+			 {
+				 [self.settings.lastSelectedTask fetchIfNeeded];
+				 if(self.settings.lastSelectedTask.objectId)
+				 {
+					 self.selectedTask = [self getTaskById:self.settings.lastSelectedTask.objectId];
+				 }
+				 else
+				 {
+					 self.selectedTask = self.tasks[0];
+				 }
+			 }
+		 }
+		 else
+		 {
+			 NSLog(@"Error: %@ %@", error, [error userInfo]);
+		 }
+	 }];
+}
+
+-(TOKTask*)getTaskById:(NSString*)taskId
+{
+	for(TOKTask* t in self.tasks)
+	{
+		if([t.objectId isEqualToString:taskId])
+			return t;
+	}
+	
+	return nil;
+}
+
+-(void)addSampleTasks
+{
+	for(int i = 1; i < 6; i++)
+	{
+		PFObject *task = [PFObject objectWithClassName:@"Task"];
+		[task setObject:[NSString stringWithFormat:@"This is the name of task %d", i] forKey:@"name"];
+		[task setObject:[NSNumber numberWithDouble:[@"4:33:24" toTimeInterval]] forKey:@"time"];
+		[task setObject:[NSNumber numberWithInt:i] forKey:@"index"];
+		task.ACL = [PFACL ACLWithUser:[PFUser currentUser]];
+		[task saveInBackground];
+	}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// Returns the directory the application uses to store the Core Data store file. This code uses a directory named "com.rocketsauce.Tock" in the user's Application Support directory.
+- (NSURL *)applicationFilesDirectory
+{
+    NSFileManager *fileManager = [NSFileManager defaultManager];
+    NSURL *appSupportURL = [[fileManager URLsForDirectory:NSApplicationSupportDirectory inDomains:NSUserDomainMask] lastObject];
+    return [appSupportURL URLByAppendingPathComponent:@"com.rocketsauce.Tock"];
+}
+
+// Creates if necessary and returns the managed object model for the application.
+- (NSManagedObjectModel *)managedObjectModel
+{
+    if (_managedObjectModel) {
+        return _managedObjectModel;
+    }
+	
+    NSURL *modelURL = [[NSBundle mainBundle] URLForResource:@"Tock" withExtension:@"momd"];
+    _managedObjectModel = [[NSManagedObjectModel alloc] initWithContentsOfURL:modelURL];
+    return _managedObjectModel;
+}
+
+// Returns the persistent store coordinator for the application. This implementation creates and return a coordinator, having added the store for the application to it. (The directory for the store is created, if necessary.)
+- (NSPersistentStoreCoordinator *)persistentStoreCoordinator
+{
+    if (_persistentStoreCoordinator) {
+        return _persistentStoreCoordinator;
+    }
+    
+    NSManagedObjectModel *mom = [self managedObjectModel];
+    if (!mom) {
+        NSLog(@"%@:%@ No model to generate a store from", [self class], NSStringFromSelector(_cmd));
+        return nil;
+    }
+    
+    NSFileManager *fileManager = [NSFileManager defaultManager];
+    NSURL *applicationFilesDirectory = [self applicationFilesDirectory];
+    NSError *error = nil;
+    
+    NSDictionary *properties = [applicationFilesDirectory resourceValuesForKeys:@[NSURLIsDirectoryKey] error:&error];
+    
+    if (!properties) {
+        BOOL ok = NO;
+        if ([error code] == NSFileReadNoSuchFileError) {
+            ok = [fileManager createDirectoryAtPath:[applicationFilesDirectory path] withIntermediateDirectories:YES attributes:nil error:&error];
+        }
+        if (!ok) {
+            [[NSApplication sharedApplication] presentError:error];
+            return nil;
+        }
+    } else {
+        if (![properties[NSURLIsDirectoryKey] boolValue]) {
+            // Customize and localize this error.
+            NSString *failureDescription = [NSString stringWithFormat:@"Expected a folder to store application data, found a file (%@).", [applicationFilesDirectory path]];
+            
+            NSMutableDictionary *dict = [NSMutableDictionary dictionary];
+            [dict setValue:failureDescription forKey:NSLocalizedDescriptionKey];
+            error = [NSError errorWithDomain:@"YOUR_ERROR_DOMAIN" code:101 userInfo:dict];
+            
+            [[NSApplication sharedApplication] presentError:error];
+            return nil;
+        }
+    }
+    
+    NSURL *url = [applicationFilesDirectory URLByAppendingPathComponent:@"Tock.storedata"];
+    NSPersistentStoreCoordinator *coordinator = [[NSPersistentStoreCoordinator alloc] initWithManagedObjectModel:mom];
+    if (![coordinator addPersistentStoreWithType:NSXMLStoreType configuration:nil URL:url options:nil error:&error]) {
+        [[NSApplication sharedApplication] presentError:error];
+        return nil;
+    }
+    _persistentStoreCoordinator = coordinator;
+    
+    return _persistentStoreCoordinator;
+}
+
+// Returns the managed object context for the application (which is already bound to the persistent store coordinator for the application.) 
+- (NSManagedObjectContext *)managedObjectContext
+{
+    if (_managedObjectContext) {
+        return _managedObjectContext;
+    }
+    
+    NSPersistentStoreCoordinator *coordinator = [self persistentStoreCoordinator];
+    if (!coordinator) {
+        NSMutableDictionary *dict = [NSMutableDictionary dictionary];
+        [dict setValue:@"Failed to initialize the store" forKey:NSLocalizedDescriptionKey];
+        [dict setValue:@"There was an error building up the data file." forKey:NSLocalizedFailureReasonErrorKey];
+        NSError *error = [NSError errorWithDomain:@"YOUR_ERROR_DOMAIN" code:9999 userInfo:dict];
+        [[NSApplication sharedApplication] presentError:error];
+        return nil;
+    }
+    _managedObjectContext = [[NSManagedObjectContext alloc] init];
+    [_managedObjectContext setPersistentStoreCoordinator:coordinator];
+
+    return _managedObjectContext;
+}
+
+// Returns the NSUndoManager for the application. In this case, the manager returned is that of the managed object context for the application.
+- (NSUndoManager *)windowWillReturnUndoManager:(NSWindow *)window
+{
+    return [[self managedObjectContext] undoManager];
+}
+
+// Performs the save action for the application, which is to send the save: message to the application's managed object context. Any encountered errors are presented to the user.
+- (IBAction)saveAction:(id)sender
+{
+    NSError *error = nil;
+    
+    if (![[self managedObjectContext] commitEditing]) {
+        NSLog(@"%@:%@ unable to commit editing before saving", [self class], NSStringFromSelector(_cmd));
+    }
+    
+    if (![[self managedObjectContext] save:&error]) {
+        [[NSApplication sharedApplication] presentError:error];
+    }
+}
+
+- (NSApplicationTerminateReply)applicationShouldTerminate:(NSApplication *)sender
+{
+    // Save changes in the application's managed object context before the application terminates.
+    
+    if (!_managedObjectContext) {
+        return NSTerminateNow;
+    }
+    
+    if (![[self managedObjectContext] commitEditing]) {
+        NSLog(@"%@:%@ unable to commit editing to terminate", [self class], NSStringFromSelector(_cmd));
+        return NSTerminateCancel;
+    }
+    
+    if (![[self managedObjectContext] hasChanges]) {
+        return NSTerminateNow;
+    }
+    
+    NSError *error = nil;
+    if (![[self managedObjectContext] save:&error]) {
+
+        // Customize this code block to include application-specific recovery steps.              
+        BOOL result = [sender presentError:error];
+        if (result) {
+            return NSTerminateCancel;
+        }
+
+        NSString *question = NSLocalizedString(@"Could not save changes while quitting. Quit anyway?", @"Quit without saves error question message");
+        NSString *info = NSLocalizedString(@"Quitting now will lose any changes you have made since the last successful save", @"Quit without saves error question info");
+        NSString *quitButton = NSLocalizedString(@"Quit anyway", @"Quit anyway button title");
+        NSString *cancelButton = NSLocalizedString(@"Cancel", @"Cancel button title");
+        NSAlert *alert = [[NSAlert alloc] init];
+        [alert setMessageText:question];
+        [alert setInformativeText:info];
+        [alert addButtonWithTitle:quitButton];
+        [alert addButtonWithTitle:cancelButton];
+
+        NSInteger answer = [alert runModal];
+        
+        if (answer == NSAlertAlternateReturn) {
+            return NSTerminateCancel;
+        }
+    }
+
+    return NSTerminateNow;
+}
+
+
+
++(void)runOnMainQueue:(void(^)(void))block
+{
+	[TOKAppDelegate runOnMainQueue:0:block];
+}
+
++(void)runOnMainQueue:(float)afterInterval :(void(^)(void))block
+{
+	if(afterInterval > 0)
+	{
+		dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^
+		   {
+			   [NSThread sleepForTimeInterval:afterInterval];
+			   dispatch_sync(dispatch_get_main_queue(), block);
+		   });
+	}
+	else
+	{
+		if([NSThread isMainThread])
+		{
+			block();
+		}
+		else
+		{
+			dispatch_sync(dispatch_get_main_queue(), block);
+		}
+	}
+}
+
++(void)runOnSeperateQueue:(void(^)(void))block
+{
+	[TOKAppDelegate runOnSeperateQueue:0:block];
+}
+
++(void)runOnSeperateQueue:(float)afterInterval :(void(^)(void))block
+{
+	if(afterInterval > 0)
+	{
+		sleep(afterInterval);
+		dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), block);
+	}
+	else
+	{
+		if([NSThread isMainThread])
+		{
+			dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), block);
+		}
+		else
+		{
+			block();
+		}
+	}
+}
+
+
+@end

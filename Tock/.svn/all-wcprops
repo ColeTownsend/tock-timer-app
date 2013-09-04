@@ -1,0 +1,101 @@
+K 25
+svn:wc:ra_dav:version-url
+V 53
+/svn/rocketsauce/!svn/ver/486/trunk/Mac/OSX/Tock/Tock
+END
+TOKAppDelegate.h
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/rocketsauce/!svn/ver/489/trunk/Mac/OSX/Tock/Tock/TOKAppDelegate.h
+END
+main.m
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/svn/rocketsauce/!svn/ver/455/trunk/Mac/OSX/Tock/Tock/main.m
+END
+TOKMainWindow.h
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/rocketsauce/!svn/ver/459/trunk/Mac/OSX/Tock/Tock/TOKMainWindow.h
+END
+TOKAddNewTaskViewController.xib
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/rocketsauce/!svn/ver/494/trunk/Mac/OSX/Tock/Tock/TOKAddNewTaskViewController.xib
+END
+Tock-Info.plist
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/rocketsauce/!svn/ver/482/trunk/Mac/OSX/Tock/Tock/Tock-Info.plist
+END
+TOKAppDelegate.m
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/rocketsauce/!svn/ver/494/trunk/Mac/OSX/Tock/Tock/TOKAppDelegate.m
+END
+TOKMainWindow.m
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/rocketsauce/!svn/ver/459/trunk/Mac/OSX/Tock/Tock/TOKMainWindow.m
+END
+TOKAddNewTaskViewController.h
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/rocketsauce/!svn/ver/484/trunk/Mac/OSX/Tock/Tock/TOKAddNewTaskViewController.h
+END
+TOKAddNewTaskViewController.m
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/rocketsauce/!svn/ver/489/trunk/Mac/OSX/Tock/Tock/TOKAddNewTaskViewController.m
+END
+TOKActiveSectionViewController.xib
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/rocketsauce/!svn/ver/490/trunk/Mac/OSX/Tock/Tock/TOKActiveSectionViewController.xib
+END
+TOKCompletedSectionViewController.xib
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/rocketsauce/!svn/ver/494/trunk/Mac/OSX/Tock/Tock/TOKCompletedSectionViewController.xib
+END
+TOKActiveSectionViewController.h
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/rocketsauce/!svn/ver/486/trunk/Mac/OSX/Tock/Tock/TOKActiveSectionViewController.h
+END
+Tock-Prefix.pch
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/rocketsauce/!svn/ver/455/trunk/Mac/OSX/Tock/Tock/Tock-Prefix.pch
+END
+TOKCompletedSectionViewController.h
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/rocketsauce/!svn/ver/489/trunk/Mac/OSX/Tock/Tock/TOKCompletedSectionViewController.h
+END
+TOKActiveSectionViewController.m
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/rocketsauce/!svn/ver/492/trunk/Mac/OSX/Tock/Tock/TOKActiveSectionViewController.m
+END
+TOKCompletedSectionViewController.m
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/rocketsauce/!svn/ver/494/trunk/Mac/OSX/Tock/Tock/TOKCompletedSectionViewController.m
+END
